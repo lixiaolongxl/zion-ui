@@ -1,33 +1,71 @@
 {
-  "name": "zion-ui",
+  "name": "zion-ui-plus",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "author": "lixiaolong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.js",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "test": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint --max-warnings 5",
+    "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "lib": "npm run lib:js && npm run lib:css",
+    "lib:css": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/style/index.scss",
+    "lib:js": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.ts",
+    "prepublishOnly": "npm run lib"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lib"
+    }
+  },
+  "main": "lib/ZIONUI.umd.js",
+  "module": "lib/ZZIONUI.common.js",
+  "unpkg": "lib/ZZIONUI.common.js",
+  "files": [
+    "lib",
+    "packages"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "husky": "^4.3.8"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "prettier": "1.19.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3"
-  }
+    "typescript": "~3.9.3",
+    "vue": "^3.0.0",
+    "vue-jest": "^5.0.0-0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "homepage": "https://lixiaolongxl.github.io/",
+  "keywords": [
+    "UI",
+    "Vue",
+    "Component"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "style": "lib/ZIONUI.css"
 }

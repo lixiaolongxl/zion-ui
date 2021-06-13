@@ -1,3 +1,4 @@
+import {App} from "vue"
 // 导入button组件
 import ZButton from './Button'
 import ZMagnifier from './Magnifier'
@@ -15,10 +16,11 @@ const components = [
 //   // 遍历注册全局组件
 //   components.map(component => Vue.component(component.name, component))
 // }
-const install = (app: any) => { 
+const install = (app: App) => { 
     components.map(component => {
-      app.use(component)
+      app.use(component.component,component)
     })
+    
   }
 
 // 判断是否是直接引入文件

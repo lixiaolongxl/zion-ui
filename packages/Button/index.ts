@@ -1,8 +1,9 @@
+import {App} from "vue"
 import ZButton from './src/index.vue'
 
 
 // 为组件提供 install 安装方法，供按需引入
-ZButton.install = (Vue:any)=> {
+ZButton.install = (Vue:App)=> {
     Vue.component(ZButton.name, ZButton)
 }
   
