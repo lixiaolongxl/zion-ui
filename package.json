@@ -6,8 +6,6 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:watch": "vue-cli-service test:unit --watch",
-    "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint --max-warnings 5",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
