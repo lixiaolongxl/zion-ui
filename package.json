@@ -14,13 +14,9 @@
     "lib": "npm run lib:js && npm run lib:css",
     "lib:css": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/style/index.scss",
     "lib:js": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.ts",
-    "prepublishOnly": "npm run lib"
+    
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lib"
-    }
-  },
+ 
   "main": "lib/ZIONUI.umd.js",
   "module": "lib/ZZIONUI.common.js",
   "unpkg": "lib/ZZIONUI.common.js",
@@ -65,7 +61,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lixiaolongxl/zion-ui.git"
   },
   "style": "lib/ZIONUI.css"
 }
