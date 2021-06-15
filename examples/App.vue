@@ -1,13 +1,13 @@
 <template>
-    <z-button >button</z-button>
+<div>
+  <z-button >button</z-button>
     <z-button type="primary">button</z-button>
     <z-button type="success">button</z-button>
     <z-button type="warning">button</z-button>
     <z-button type="danger">button</z-button>
     <z-button type="info">button</z-button>
     <br>
-    <div style="margin:0 auto">
-      <z-magnifier 
+    <z-magnifier 
       link="www.baidu.com"
       :imgUrl="data.imgUrl"
       :width="data.width"
@@ -16,7 +16,12 @@
       :magHeight="data.magHeight"
       @linkClick="HandClick"
     ></z-magnifier>
-    </div>
+</div>
+    
+
+    
+      
+    
     
 </template>
 

@@ -1,6 +1,6 @@
 {
   "name": "zion-ui-plus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "author": "lixiaolong",
   "scripts": {
@@ -14,9 +14,13 @@
     "lib": "npm run lib:js && npm run lib:css",
     "lib:css": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/style/index.scss",
     "lib:js": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.ts",
-    
+    "prepublishOnly": "npm run lib"
   },
- 
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lib"
+    }
+  },
   "main": "lib/ZIONUI.umd.js",
   "module": "lib/ZZIONUI.common.js",
   "unpkg": "lib/ZZIONUI.common.js",
