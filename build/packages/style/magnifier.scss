@@ -1,0 +1,32 @@
+.z-magnifier {
+//  background-color: aqua;
+display: inline-block;
+    position: relative;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #999;
+    .z-magbox {
+        display: none;
+        position:absolute;
+        border-radius: 50%;
+        top:0;
+        left:0;
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: 0 0 3px #000;
+        cursor: move;
+        overflow: hidden;
+        &.show{
+            display: block;
+            transform: scale(1.5);
+        }
+
+        .mag-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    .static-img {
+        width: 100%;
+    }
+}

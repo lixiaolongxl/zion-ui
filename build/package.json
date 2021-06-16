@@ -1,37 +1,22 @@
 {
-  "name": "zion-ui-plus",
-  "version": "1.0.2",
+  "name": "build",
+  "version": "1.0.0",
   "private": false,
   "author": "lixiaolong",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build:web": "vue-cli-service build",
-    "test:watch": "vue-cli-service test:unit --watch",
-    "test": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint --max-warnings 5",
-    "lib": "vue-cli-service build --target lib --name ZIONUI --dest theme-chalk packages/style/index.scss",
-    "lib:js": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.ts",
-    "prepublishOnly": "npm run lib && npm run deploy",
-    "deploy":"sh deploy.sh"
+    "build": "npm run clean && npm run build:esm && npm run build:umd",
+    "build:esm": "rollup --config build/rollup.esm.config.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js",
+    "clean": "rimraf ../lib"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lib && npm run deploy"
-    }
-  },
-  "main": "lib/ZIONUI.umd.js",
-  "module": "lib/ZZIONUI.common.js",
-  "unpkg": "lib/ZZIONUI.common.js",
-  "files": [
-    "lib",
-    "packages",
-    "theme-chalk"
-  ],
   "dependencies": {
     "core-js": "^3.6.5",
     "husky": "^4.3.8"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "@rollup/plugin-typescript": "^8.1.1",
+    "@soda/friendly-errors-webpack-plugin": "^1.8.0",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
@@ -43,12 +28,23 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^2.0.0-0",
+    "babel-loader": "^8.2.2",
+    "cache-loader": "^4.1.0",
+    "css-loader": "^5.2.6",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "file-loader": "^6.2.0",
+    "husky": "^4.3.8",
     "prettier": "1.19.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.38.5",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
+    "url-loader": "^4.1.1",
     "vue": "^3.0.0",
     "vue-jest": "^5.0.0-0"
   },

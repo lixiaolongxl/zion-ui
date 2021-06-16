@@ -1,10 +1,11 @@
 module.exports = {
     lintOnSave: false,
     devServer: {
-        overlay: {
-            warning: false,
-            errors: false
-        }
+      open:true,
+      overlay: {
+          warning: false,
+          errors: false
+      }
     },
     pages: {
       index: {
@@ -18,7 +19,7 @@ module.exports = {
       config.module
         .rule('js')
         .include
-          .add('/packages')
+          .add('/build/packages')
           .end()
         .use('babel')
           .loader('babel-loader')

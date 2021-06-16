@@ -1,0 +1,42 @@
+.z-button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 6px;
+    background: $--background-color-base;
+    
+    span {
+        color: $--color-info;
+    }
+    &.z-button-primary {
+        background: $--background-color-base;
+        span {
+            color: $--color-primary;
+        }
+    }
+
+    &.z-button-success {
+        background: $--background-color-base;
+        span {
+            color: $--color-success;
+        }
+    }
+    &.z-button-warning {
+        background: $--background-color-base;
+        span {
+            color: $--color-warning;
+        }
+    }
+
+    &.z-button-danger {
+        background: $--background-color-base;
+        span {
+            color: $--color-danger;
+        }
+    }
+    &.z-button-info {
+        background: $--background-color-base;
+        span {
+            color: $--color-info;
+        }
+    }
+}
