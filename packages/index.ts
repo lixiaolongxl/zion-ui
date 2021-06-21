@@ -2,11 +2,13 @@ import {App} from "vue"
 // 导入button组件
 import ZButton from './Button'
 import ZMagnifier from './Magnifier'
+import ZGverify from './Gverify'
 
 // 组件列表
 const components = [
     ZButton,
-    ZMagnifier
+    ZMagnifier,
+    ZGverify
 ]
 const install = (app:App) => { 
     components.map(component => {
@@ -24,7 +26,8 @@ export  {
   install,
   // 以下是具体的组件列表
   ZButton,
-  ZMagnifier
+  ZMagnifier,
+  ZGverify
 }
 export default {
   install

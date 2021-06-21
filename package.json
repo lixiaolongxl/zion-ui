@@ -1,6 +1,6 @@
 {
   "name": "zion-ui-plus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "author": "lixiaolong",
   "scripts": {
@@ -19,9 +19,9 @@
       "pre-commit": "npm run lib && npm run deploy"
     }
   },
-  "main": "lib/ZIONUI.umd.js",
-  "module": "lib/ZZIONUI.common.js",
-  "unpkg": "lib/ZZIONUI.common.js",
+  "main": "lib/zion-ui-plus.umd.js",
+  "module": "lib/zion-ui-plus.umd.js",
+  "unpkg": "lib/zion-ui-plus.umd.js",
   "files": [
     "lib",
     "packages",
@@ -66,5 +66,5 @@
     "type": "git",
     "url": "https://github.com/lixiaolongxl/zion-ui.git"
   },
-  "style": "lib/ZIONUI.css"
+  "style": "theme-chalk/ZIONUI.css"
 }

@@ -16,6 +16,9 @@
       :magHeight="data.magHeight"
       @linkClick="HandClick"
     ></z-magnifier>
+    <br>
+    <z-gverify ref="gverify" ></z-gverify>
+    <button @click="jiaoyan">校验</button>
 </div>
     
 
@@ -26,16 +29,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+import { defineComponent, reactive,ref } from 'vue';
 interface magnifierprop {
   imgUrl:string;
   width:number;
   height:number;
   [propName: string]: any; //新加不约束的属性
 }
+
 export default defineComponent({
   name: 'App',
   setup(){
+    const gverify = ref(null) // 通过 ref 绑定子组件
     const data = reactive<magnifierprop>({
       imgUrl:'https://lixiaolongxl.github.io/img/logo.jpeg',
       width:300,
@@ -46,9 +51,17 @@ export default defineComponent({
     const HandClick = (linkUrl:string)=>{
       debugger
     }
+    const jiaoyan = ()=>{
+    
+      let a = (gverify as any).value.validate('123')
+      console.log(a);
+    }
+   
     return {
       data,
-      HandClick
+      gverify,
+      HandClick,
+      jiaoyan
     }
   }
 });
