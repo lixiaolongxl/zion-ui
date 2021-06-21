@@ -18,7 +18,8 @@
     ></z-magnifier>
     <br>
     <z-gverify ref="gverify" ></z-gverify>
-    <button @click="jiaoyan">校验</button>
+    <div><button @click="jiaoyan">校验</button></div>
+    
 </div>
     
 
