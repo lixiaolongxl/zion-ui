@@ -15,6 +15,22 @@ export default defineComponent({
     height:{
         type:Number,
         default:30
+    },
+    size:{
+      type:Number,
+      default:4
+    },
+    blend:{
+      type:String,
+      default:'blend'
+    },
+    iswire:{
+      type:Boolean,
+      default:false
+    },
+    isPoint:{
+      type:Boolean,
+      default:false
     }
   },
   data(){
@@ -25,12 +41,12 @@ export default defineComponent({
   mounted () {
     (this.verifyCode as any) = new GVerify({
         id:'z-gverify-img-code',
-        size:4,
+        size:this.size,
         width:this.width,
         height:this.height,
-        blend:'number',
-        iswire:false,
-        isPoint:false
+        blend:this.blend,
+        iswire:this.iswire,
+        isPoint:this.isPoint
     })
   },
   methods: {
@@ -40,27 +56,6 @@ export default defineComponent({
       }
     }
   }
-  // emits: ["validate"],
-  // setup(prop){
-  //   let verifyCode = reactive({})
-  //   let code = ''
-  //   onMounted(()=>{
-  //     verifyCode = new GVerify({
-  //       id:'z-gverify-img-code',
-  //       width:prop.width,
-  //       height:prop.height,
-  //       blend:'number',
-  //       iswire:false,
-  //       isPoint:false,
-  //     })
-  //     code = (verifyCode as any).options.code
-  //     // debugger;
-  //   })
-  //   return {
-  //     verifyCode,
-  //     code:code
-  //   }
-  // }
 });
 </script>
 

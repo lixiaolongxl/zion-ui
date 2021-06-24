@@ -11,12 +11,13 @@
     "lint": "vue-cli-service lint --max-warnings 5",
     "lib": "vue-cli-service build --target lib --name ZIONUI --dest theme-chalk packages/style/index.scss",
     "lib:js": "vue-cli-service build --target lib --name ZIONUI --dest lib packages/index.ts",
-    "prepublishOnly": "npm run lib && npm run deploy",
-    "deploy":"sh deploy.sh"
+    "prepublishOnly": "npm run lib && npm run build:theme",
+    "build:theme":"gulp build --gulpfile gulpfile.js",
+    "deploy": "sh deploy.sh"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lib && npm run deploy"
+      "pre-commit": "npm run lib && npm run build:theme"
     }
   },
   "main": "lib/zion-ui-plus.umd.js",
@@ -45,6 +46,10 @@
     "@vue/test-utils": "^2.0.0-0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.1.0",
     "prettier": "1.19.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
@@ -66,5 +71,5 @@
     "type": "git",
     "url": "https://github.com/lixiaolongxl/zion-ui.git"
   },
-  "style": "theme-chalk/ZIONUI.css"
+  "style": "lib/index.css"
 }
