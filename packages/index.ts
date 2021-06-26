@@ -3,12 +3,14 @@ import {App} from "vue"
 import ZButton from './Button'
 import ZMagnifier from './Magnifier'
 import ZGverify from './Gverify'
+import ZCropper from './Cropper'
 
 // 组件列表
 const components = [
     ZButton,
     ZMagnifier,
-    ZGverify
+    ZGverify,
+    ZCropper
 ]
 const install = (app:App) => { 
     components.map(component => {
@@ -27,7 +29,8 @@ export  {
   // 以下是具体的组件列表
   ZButton,
   ZMagnifier,
-  ZGverify
+  ZGverify,
+  ZCropper
 }
 export default {
   install

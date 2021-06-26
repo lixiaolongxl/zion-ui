@@ -19,6 +19,33 @@
     <br>
     <z-gverify ref="gverify" ></z-gverify>
     <div><button @click="jiaoyan">校验</button></div>
+    <br>
+    <div style="height:500px">
+      <z-cropper 
+      ref="cropper"
+						:img="option.img"
+						:outputSize="option.size"
+						:outputType="option.outputType"
+						:info="true"
+						:full="option.full"
+						:canMove="option.canMove"
+						:canMoveBox="option.canMoveBox"
+						:fixedBox="option.fixedBox"
+						:original="option.original"
+						:autoCrop="option.autoCrop"
+						:autoCropWidth="option.autoCropWidth"
+						:autoCropHeight="option.autoCropHeight"
+						:centerBox="option.centerBox"
+						:high="option.high"
+						:infoTrue="option.infoTrue"
+            :maxImgSize="option.maxImgSize"
+						@cropMoving="cropMoving"
+						:enlarge="option.enlarge"
+						:mode="option.mode"
+            :limitMinSize="option.limitMinSize"
+    ></z-cropper>
+    </div>
+    
     
 </div>
     
@@ -57,12 +84,37 @@ export default defineComponent({
       let a = (gverify as any).value.validate('123')
       console.log(a);
     }
-   
+   let option = reactive({
+        img: "https://lixiaolongxl.github.io/img/logo.jpeg",
+        size: 1,
+        full: false,
+        outputType: "jpeg",
+        canMove: true,
+        fixedBox: false,
+        original: false,
+        canMoveBox: true,
+        autoCrop: true,
+        // 只有自动截图开启 宽度高度才生效
+        autoCropWidth: 200,
+        autoCropHeight: 150,
+        centerBox: false,
+        high: false,
+        cropData: {},
+				enlarge: 1,
+        mode: 'contain',
+        maxImgSize: 3000,
+        limitMinSize: [100, 120]
+   })
+   const cropMoving = (data:any)=>{
+     option.cropData = data;
+   }
     return {
       data,
       gverify,
       HandClick,
-      jiaoyan
+      jiaoyan,
+      option,
+      cropMoving
     }
   }
 });
