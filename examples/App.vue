@@ -22,28 +22,32 @@
     <br>
     <div style="height:500px">
       <z-cropper 
-      ref="cropper"
-						:img="option.img"
-						:outputSize="option.size"
-						:outputType="option.outputType"
-						:info="true"
-						:full="option.full"
-						:canMove="option.canMove"
-						:canMoveBox="option.canMoveBox"
-						:fixedBox="option.fixedBox"
-						:original="option.original"
-						:autoCrop="option.autoCrop"
-						:autoCropWidth="option.autoCropWidth"
-						:autoCropHeight="option.autoCropHeight"
-						:centerBox="option.centerBox"
-						:high="option.high"
-						:infoTrue="option.infoTrue"
-            :maxImgSize="option.maxImgSize"
-						@cropMoving="cropMoving"
-						:enlarge="option.enlarge"
-						:mode="option.mode"
-            :limitMinSize="option.limitMinSize"
+      	ref="cropper"
+        v-if="false"
+		:img="option.img"
+		:outputSize="option.size"
+		:outputType="option.outputType"
+		:info="true"
+		:full="option.full"
+		:canMove="option.canMove"
+		:canMoveBox="option.canMoveBox"
+		:fixedBox="option.fixedBox"
+		:original="option.original"
+		:autoCrop="option.autoCrop"
+		:autoCropWidth="option.autoCropWidth"
+		:autoCropHeight="option.autoCropHeight"
+		:centerBox="option.centerBox"
+		:high="option.high"
+		:infoTrue="option.infoTrue"
+		:maxImgSize="option.maxImgSize"
+		@cropMoving="cropMoving"
+		:enlarge="option.enlarge"
+		:mode="option.mode"
+		:limitMinSize="option.limitMinSize"
     ></z-cropper>
+
+
+    <z-ellipsis  style="width: 140px;">住在我心里孤独的 孤独的海怪 痛苦之王 开始厌倦 深海的光 停滞的海浪</z-ellipsis>
     </div>
     
     

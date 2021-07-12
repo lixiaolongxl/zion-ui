@@ -4,13 +4,15 @@ import ZButton from './Button'
 import ZMagnifier from './Magnifier'
 import ZGverify from './Gverify'
 import ZCropper from './Cropper'
+import ZEllipsis from './Ellipsis'
 
 // 组件列表
 const components = [
     ZButton,
     ZMagnifier,
     ZGverify,
-    ZCropper
+    ZCropper,
+    ZEllipsis
 ]
 const install = (app:App) => { 
     components.map(component => {
@@ -30,7 +32,8 @@ export  {
   ZButton,
   ZMagnifier,
   ZGverify,
-  ZCropper
+  ZCropper,
+  ZEllipsis
 }
 export default {
   install
